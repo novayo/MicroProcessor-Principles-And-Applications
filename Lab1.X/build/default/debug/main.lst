@@ -1,11 +1,11 @@
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE  1
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
 Warning[205]: Found directive in column 1. (LIST)
-                      00001 LIST p=18f4520              ; 1, 2行設定板子型號
+                      00001 LIST p=18f4520              
                       00002 #include<p18f4520.inc>
                       00001         LIST
                       00002 
@@ -17,10 +17,9 @@ Warning[205]: Found directive in column 1. (LIST)
                       00008 ;==========================================================================
                       00009 
                       01489         LIST
-                      00003     CONFIG OSC = INTIO67   ; 設定板子初始化 => 使 Oscillator 的 port function 設定在 RA6 和
-                             RA7
-                      00004     CONFIG WDT = OFF        ; 設定板子初始化 => 關掉 Watchdog Timer
-                      00005     org   0x00              ; 程式都從 0x00 開始
+                      00003     CONFIG OSC = INTIO67
+                      00004     CONFIG WDT = OFF
+                      00005     org   0x00
 000000                00006 Initial:
 000000                00007 start:
 000000 6AE8           00008     clrf WREG
@@ -41,7 +40,7 @@ Warning[205]: Found directive in column 1. (LIST)
                       00023     
 Warning[205]: Found directive in column 1. (end)
                       00024 end
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE  2
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE  2
 
 
 SYMBOL TABLE
@@ -100,7 +99,7 @@ BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
 BOR                               00000000
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE  3
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE  3
 
 
 SYMBOL TABLE
@@ -159,7 +158,7 @@ CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE  4
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE  4
 
 
 SYMBOL TABLE
@@ -218,7 +217,7 @@ FLTS                              00000002
 FREE                              00000004
 FSR0                              00000000
 FSR0H                             00000FEA
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE  5
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE  5
 
 
 SYMBOL TABLE
@@ -277,7 +276,7 @@ INT2P                             00000007
 INTCON                            00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE  6
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE  6
 
 
 SYMBOL TABLE
@@ -336,7 +335,7 @@ LATD3                             00000003
 LATD4                             00000004
 LATD5                             00000005
 LATD6                             00000006
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE  7
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE  7
 
 
 SYMBOL TABLE
@@ -395,7 +394,7 @@ OV                                00000003
 P                                 00000004
 P1A                               00000002
 P1B                               00000005
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE  8
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE  8
 
 
 SYMBOL TABLE
@@ -454,7 +453,7 @@ PREINC2                           00000FDC
 PROD                              00000FF3
 PRODH                             00000FF4
 PRODL                             00000FF3
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE  9
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE  9
 
 
 SYMBOL TABLE
@@ -513,7 +512,7 @@ RCIDL                             00000006
 RCIE                              00000005
 RCIF                              00000005
 RCIP                              00000005
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE 10
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE 10
 
 
 SYMBOL TABLE
@@ -572,7 +571,7 @@ SSPADD                            00000FC8
 SSPBUF                            00000FC9
 SSPCON1                           00000FC6
 SSPCON2                           00000FC5
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE 11
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE 11
 
 
 SYMBOL TABLE
@@ -631,7 +630,7 @@ T3CKPS0                           00000004
 T3CKPS1                           00000005
 T3CON                             00000FB1
 T3SYNC                            00000002
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE 12
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE 12
 
 
 SYMBOL TABLE
@@ -690,7 +689,7 @@ TRISA6                            00000006
 TRISA7                            00000007
 TRISB                             00000F93
 TRISB0                            00000000
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE 13
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE 13
 
 
 SYMBOL TABLE
@@ -749,7 +748,7 @@ VPP                               00000003
 VREFN                             00000002
 VREFP                             00000003
 W                                 00000000
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE 14
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE 14
 
 
 SYMBOL TABLE
@@ -808,7 +807,7 @@ _EBTR2_OFF_7L                     000000FF
 _EBTR2_ON_7L                      000000FB
 _EBTR3_OFF_7L                     000000FF
 _EBTR3_ON_7L                      000000F7
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE 15
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE 15
 
 
 SYMBOL TABLE
@@ -867,7 +866,7 @@ _WDTPS_64_2H                      000000ED
 _WDTPS_8192_2H                    000000FB
 _WDTPS_8_2H                       000000E7
 _WDT_OFF_2H                       000000FE
-MPASM 5.81                NEWASMTEMPLATE.ASM   10-3-2018  1:11:58         PAGE 16
+MPASM 5.81                          MAIN.ASM   10-3-2018  1:20:07         PAGE 16
 
 
 SYMBOL TABLE
