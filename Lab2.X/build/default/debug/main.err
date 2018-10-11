@@ -1,4 +1,0 @@
-Warning[205] D:\MPLAB\LAB\LAB2.X\MAIN.ASM 8 : Found directive in column 1. (LIST)
-Warning[203] D:\MPLAB\LAB\LAB2.X\MAIN.ASM 26 : Found opcode in column 1. (movff)
-Warning[203] D:\MPLAB\LAB\LAB2.X\MAIN.ASM 28 : Found opcode in column 1. (clrf)
-Warning[205] D:\MPLAB\LAB\LAB2.X\MAIN.ASM 36 : Found directive in column 1. (end)
