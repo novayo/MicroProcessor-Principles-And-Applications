@@ -11,7 +11,7 @@
 ;    NOP
 ;    NOP
 ;    GOTO Initial
-; 3. Give value 0x8F to your LATB register, and do any one of following two options:
+; 3. Give value 0xBF to your LATB register, and do any one of following two options:
 ;    Option A: Rotate Left and store in WREG, C = 1, what is result?
 ;        ANS: b'00011110
 ;    Option B: Rotate Right and store in WREG, C = 1, what is result?
@@ -48,7 +48,7 @@ Initial:
     NOP
     
 Rotate:
-    MOVLW 0x8F
+    MOVLW 0xBF
     ADDWF LATB, 1, 0
     RLCF LATB, 0, 0
     
