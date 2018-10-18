@@ -1,4 +1,4 @@
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE  1
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -38,9 +38,9 @@ Warning[209]: Missing quote
                       00020     
 00000A                00021 NAND:
 Warning[209]: Missing quote
-00000A 0EB5           00022     MOVLW b'10110101
+00000A 0E5D           00022     MOVLW b'01011101
 Warning[209]: Missing quote
-00000C 0B7C           00023     ANDLW b'01111100
+00000C 0B78           00023     ANDLW b'01111000
 00000E 1A8C           00024     XORWF LATD, 1, 0
 000010 0000           00025     NOP
                       00026 
@@ -54,7 +54,7 @@ Warning[209]: Missing quote
                       00032     
 Warning[205]: Found directive in column 1. (end)
                       00033 end
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE  2
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE  2
 
 
 SYMBOL TABLE
@@ -113,7 +113,7 @@ BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
 BOR                               00000000
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE  3
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE  3
 
 
 SYMBOL TABLE
@@ -172,7 +172,7 @@ CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE  4
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE  4
 
 
 SYMBOL TABLE
@@ -231,7 +231,7 @@ FLTS                              00000002
 FREE                              00000004
 FSR0                              00000000
 FSR0H                             00000FEA
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE  5
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE  5
 
 
 SYMBOL TABLE
@@ -290,7 +290,7 @@ INT2P                             00000007
 INTCON                            00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE  6
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE  6
 
 
 SYMBOL TABLE
@@ -349,7 +349,7 @@ LATD3                             00000003
 LATD4                             00000004
 LATD5                             00000005
 LATD6                             00000006
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE  7
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE  7
 
 
 SYMBOL TABLE
@@ -408,7 +408,7 @@ OSCTUNE                           00000F9B
 OSTS                              00000003
 OV                                00000003
 P                                 00000004
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE  8
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE  8
 
 
 SYMBOL TABLE
@@ -467,7 +467,7 @@ PREINC0                           00000FEC
 PREINC1                           00000FE4
 PREINC2                           00000FDC
 PROD                              00000FF3
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE  9
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE  9
 
 
 SYMBOL TABLE
@@ -526,7 +526,7 @@ RC7                               00000007
 RCEN                              00000003
 RCIDL                             00000006
 RCIE                              00000005
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE 10
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE 10
 
 
 SYMBOL TABLE
@@ -585,7 +585,7 @@ SREN                              00000005
 SS                                00000005
 SSPADD                            00000FC8
 SSPBUF                            00000FC9
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE 11
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE 11
 
 
 SYMBOL TABLE
@@ -644,7 +644,7 @@ T3CCP1                            00000003
 T3CCP2                            00000006
 T3CKPS0                           00000004
 T3CKPS1                           00000005
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE 12
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE 12
 
 
 SYMBOL TABLE
@@ -703,7 +703,7 @@ TRISA4                            00000004
 TRISA5                            00000005
 TRISA6                            00000006
 TRISA7                            00000007
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE 13
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE 13
 
 
 SYMBOL TABLE
@@ -762,7 +762,7 @@ VCFG1                             00000005
 VDIRMAG                           00000007
 VPP                               00000003
 VREFN                             00000002
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE 14
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE 14
 
 
 SYMBOL TABLE
@@ -821,7 +821,7 @@ _EBTR1_OFF_7L                     000000FF
 _EBTR1_ON_7L                      000000FD
 _EBTR2_OFF_7L                     000000FF
 _EBTR2_ON_7L                      000000FB
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE 15
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE 15
 
 
 SYMBOL TABLE
@@ -880,7 +880,7 @@ _WDTPS_4_2H                       000000E5
 _WDTPS_512_2H                     000000F3
 _WDTPS_64_2H                      000000ED
 _WDTPS_8192_2H                    000000FB
-MPASM 5.81                          MAIN.ASM   10-17-2018  23:44:04         PAGE 16
+MPASM 5.81                          MAIN.ASM   10-18-2018  15:29:56         PAGE 16
 
 
 SYMBOL TABLE

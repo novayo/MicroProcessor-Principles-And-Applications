@@ -29,23 +29,25 @@ Init:
     
     NOP
 Start:
-    INCF LATA
-    ADDWF LATA, 0, 0 ;8
+    INCF WREG
+    ADDWF LATA, 1, 0 ;8
     BNOV 6 
     
     NOP 
     
-Q2:
-    BOV 18
-    
-    NOP       ;10
     NOP
     NOP
-    GOTO Init 
-    
-    NOP ;18
+    NOP
+    GOTO Initial
 
-Q3:
+Initial:
+    NOP
+    GOTO Rotate
+
+    NOP
+    NOP
+    
+Rotate:
     MOVLW 0x8F
     ADDWF LATB, 1, 0
     RLCF LATB, 0, 0

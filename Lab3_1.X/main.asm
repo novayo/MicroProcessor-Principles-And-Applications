@@ -19,8 +19,8 @@ Init:
     NOP
     
 NAND:
-    MOVLW b'10110101
-    ANDLW b'01111100
+    MOVLW b'01011101
+    ANDLW b'01111000
     XORWF LATD, 1, 0
     NOP
 
