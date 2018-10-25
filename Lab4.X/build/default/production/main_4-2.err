@@ -1,0 +1,3 @@
+Warning[205] D:\MPLAB\LAB\LAB4.X\MAIN_4-2.ASM 1 : Found directive in column 1. (LIST)
+Warning[207] D:\MPLAB\LAB\LAB4.X\MAIN_4-2.ASM 8 : Found label after column 1. (movlf)
+Warning[205] D:\MPLAB\LAB\LAB4.X\MAIN_4-2.ASM 52 : Found directive in column 1. (end)
