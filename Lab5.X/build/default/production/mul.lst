@@ -1,0 +1,58 @@
+
+
+Microchip Technology PIC18 Macro Assembler V2.00 build -1524193055 
+                                                                                                           Thu Nov 01 02:27:34 2018
+
+
+     1                           	processor	18F4520
+     2                           	opt	pw 132
+     3                           	psect	mytext,local,reloc=2,class=CODE,delta=1
+     4  0000                     stk_offset	set	0
+     5  0000                     auto_size	set	0
+     6                           
+     7                           ; stack_auto defines a symbol /name/_offset which equates to the
+     8                           ; stack offset of the auto object in question
+     9  0000                     
+    10                           ; stack_param defines a symbol /name/_offset which equates to the
+    11                           ; stack offset of the parameter object in question
+    12  0000                     
+    13                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    14                           ; it also links in to the btemp symbol so that can be used
+    15  0000                     
+    16                           ; restore_stack adjusts the SP to remove all auto and parameter
+    17                           ; objects from the stack prior to returning from a function
+    18  0000                     
+    19                           	psect	mytext
+    20  007F9C                     _mul:
+    21                           	opt stack 0
+    22  007F9C  C001 FF89          	movff	1,3977
+    23  007FA0  C003 FF8A          	movff	3,3978
+    24  007FA4  6A8B               	clrf	3979,c
+    25  007FA6  0E08               	movlw	8
+    26  007FA8  CFE8 FF8C          	movff	wreg,3980
+    27  007FAC                     For:
+    28  007FAC  6A8D               	clrf	3981,c
+    29  007FAE  B08B               	btfsc	3979,0,c
+    30  007FB0  2A8D               	incf	3981,f,c
+    31  007FB2  328B               	rrcf	3979,f,c
+    32  007FB4  328A               	rrcf	3978,f,c
+    33  007FB6  B08D               	btfsc	3981,0,c
+    34  007FB8  8E8A               	bsf	3978,7,c
+    35  007FBA  A08A               	btfss	3978,0,c
+    36  007FBC  D002               	goto	Continue
+    37  007FBE  5089               	movf	3977,w,c
+    38  007FC0  268B               	addwf	3979,f,c
+    39  007FC2                     Continue:
+    40  007FC2  2E8C               	decfsz	3980,f,c
+    41  007FC4  D7F3               	goto	For
+    42  007FC6  CF8A F001          	movff	3978,1
+    43  007FCA  0012               	return	
+    44                           wreg	equ	0xFE8
+
+
+Microchip Technology PIC18 Macro Assembler V2.00 build -1524193055 
+Symbol Table                                                                                               Thu Nov 01 02:27:34 2018
+
+                         For 7FAC                          LATA 000F89                          LATB 000F8A  
+                        LATC 000F8B                          LATD 000F8C                          LATE 000F8D  
+                        WREG 000FE8                          _mul 7F9C                      Continue 7FC2  
