@@ -4517,8 +4517,8 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 void main(void) {
     int a=12;
-    int b=10;
-    int RRR = mul( a, b) ;
+    int b=1;
+    int Ans = mul( a, b) ;
 
     while(1);
     return;

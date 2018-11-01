@@ -3,8 +3,8 @@ __S1 7 0 ABS 0
 __S2 0 0 ABS 0
 __Hintentry 0 0 ABS 0
 __Lintentry 0 0 ABS 0
-_mul 7F9C 0 CODE 0
-_main 7FCC 0 CODE 0
+_mul 7FCC 0 CODE 0
+_main 7F98 0 CODE 0
 ___sp 0 0 STACK 2
 start 0 0 CODE 0
 _mul$0 1 0 COMRAM 1
@@ -71,11 +71,11 @@ __Linit 0 0 CODE 0
 __Hintcodelo 0 0 CODE 0
 __Lintcodelo 0 0 CODE 0
 __Hrbss 0 0 COMRAM 1
-__end_of_main 8000 0 CODE 0
+__end_of_main 7FCC 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
-end_of_initialization 7F96 0 CODE 0
+end_of_initialization 7F92 0 CODE 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
 __Hifardata 0 0 CODE 0
@@ -96,10 +96,10 @@ __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
 __Htext0 0 0 ABS 0
 __Ltext0 0 0 ABS 0
-__ptext0 7FCC 0 CODE 0
+__ptext0 7F98 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
-__end_of__initialization 7F96 0 CODE 0
+__end_of__initialization 7F92 0 CODE 0
 ___rparam_used 1 0 ABS 0
 __Hidata 0 0 CODE 0
 __Lidata 0 0 CODE 0
@@ -127,7 +127,7 @@ __Hnvbit 0 0 COMRAM 1
 __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
-__pcinit 7F96 0 CODE 0
+__pcinit 7F92 0 CODE 0
 __ramtop 600 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
 __size_of_main 0 0 ABS 0
@@ -145,57 +145,58 @@ intlevel0 0 0 CODE 0
 intlevel1 0 0 CODE 0
 intlevel2 0 0 CODE 0
 intlevel3 0 0 CODE 0
-start_initialization 7F96 0 CODE 0
-__initialization 7F96 0 CODE 0
+start_initialization 7F92 0 CODE 0
+__initialization 7F92 0 CODE 0
 __activetblptr 0 0 ABS 0
 %segments
 reset_vec 0 3 CODE 0 0
 config 300000 30000D CONFIG 300000 0
 idloc 200000 200007 IDLOC 200000 0
 cstackCOMRAM 1 6 COMRAM 1 1
-text0 7FCC 7FFF CODE 7FCC 0
-mytext 7F9C 7FCB CODE 7F9C 0
-cinit 7F96 7F9B CODE 7F96 0
+mytext 7FCC 7FFF CODE 7FCC 0
+text0 7F98 7FCB CODE 7F98 0
+cinit 7F92 7F97 CODE 7F92 0
 %locals
 dist/default/debug\Lab5.X.debug.o
 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4520.h
-C:\Users\user\AppData\Local\Temp\s66s.
-391 7F96 0 CODE 0
-393 7F96 0 CODE 0
-396 7F96 0 CODE 0
-402 7F96 0 CODE 0
-404 7F96 0 CODE 0
-405 7F98 0 CODE 0
+C:\Users\user\AppData\Local\Temp\s1rc.
+391 7F92 0 CODE 0
+393 7F92 0 CODE 0
+396 7F92 0 CODE 0
+402 7F92 0 CODE 0
+404 7F92 0 CODE 0
+405 7F94 0 CODE 0
 main.c
-4 7FCC 0 CODE 0
-5 7FCC 0 CODE 0
-6 7FD4 0 CODE 0
-7 7FDC 0 CODE 0
-9 7FF8 0 CODE 0
-11 7FFC 0 CODE 0
+4 7F98 0 CODE 0
+5 7F98 0 CODE 0
+6 7FA0 0 CODE 0
+7 7FA8 0 CODE 0
+9 7FC4 0 CODE 0
+11 7FC8 0 CODE 0
 build/default/debug/mul.o
 3
 2
-17 7F9C 0 CODE 0
-21 7F9C 0 CODE 0
-24 7FA0 0 CODE 0
-27 7FA4 0 CODE 0
-30 7FA6 0 CODE 0
-31 7FA8 0 CODE 0
-33 7FAC 0 CODE 0
-35 7FAC 0 CODE 0
-38 7FAE 0 CODE 0
-39 7FB0 0 CODE 0
-42 7FB2 0 CODE 0
-43 7FB4 0 CODE 0
-46 7FB6 0 CODE 0
-47 7FB8 0 CODE 0
-50 7FBA 0 CODE 0
-51 7FBC 0 CODE 0
-54 7FBE 0 CODE 0
-55 7FC0 0 CODE 0
-57 7FC2 0 CODE 0
-58 7FC2 0 CODE 0
-59 7FC4 0 CODE 0
-62 7FC6 0 CODE 0
-64 7FCA 0 CODE 0
+17 7FCC 0 CODE 0
+21 7FCC 0 CODE 0
+24 7FD0 0 CODE 0
+27 7FD4 0 CODE 0
+30 7FD6 0 CODE 0
+31 7FD8 0 CODE 0
+33 7FDC 0 CODE 0
+35 7FDC 0 CODE 0
+38 7FDE 0 CODE 0
+39 7FE0 0 CODE 0
+42 7FE2 0 CODE 0
+43 7FE4 0 CODE 0
+46 7FE6 0 CODE 0
+47 7FE8 0 CODE 0
+49 7FEA 0 CODE 0
+51 7FEA 0 CODE 0
+52 7FEC 0 CODE 0
+55 7FEE 0 CODE 0
+56 7FF0 0 CODE 0
+58 7FF2 0 CODE 0
+59 7FF4 0 CODE 0
+62 7FF6 0 CODE 0
+63 7FFA 0 CODE 0
+65 7FFE 0 CODE 0

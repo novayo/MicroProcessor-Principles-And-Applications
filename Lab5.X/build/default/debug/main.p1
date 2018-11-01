@@ -429,9 +429,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _a `i ~T0 @X0 1 a ]
 [e = _a -> 12 `i ]
 "6
-[; ;main.c: 6:     int b=12;
+[; ;main.c: 6:     int b=30;
 [v _b `i ~T0 @X0 1 a ]
-[e = _b -> 12 `i ]
+[e = _b -> 30 `i ]
 "7
 [; ;main.c: 7:     int Ans = mul( a, b) ;
 [v _Ans `i ~T0 @X0 1 a ]

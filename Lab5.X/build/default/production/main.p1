@@ -429,13 +429,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _a `i ~T0 @X0 1 a ]
 [e = _a -> 12 `i ]
 "6
-[; ;main.c: 6:     int b=10;
+[; ;main.c: 6:     int b=1;
 [v _b `i ~T0 @X0 1 a ]
-[e = _b -> 10 `i ]
+[e = _b -> 1 `i ]
 "7
-[; ;main.c: 7:     int RRR = mul( a, b) ;
-[v _RRR `i ~T0 @X0 1 a ]
-[e = _RRR -> ( _mul (2 , -> _a `ui -> _b `ui `i ]
+[; ;main.c: 7:     int Ans = mul( a, b) ;
+[v _Ans `i ~T0 @X0 1 a ]
+[e = _Ans -> ( _mul (2 , -> _a `ui -> _b `ui `i ]
 "9
 [; ;main.c: 9:     while(1);
 [e :U 283 ]

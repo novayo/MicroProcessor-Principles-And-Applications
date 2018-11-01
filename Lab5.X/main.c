@@ -3,7 +3,7 @@
 
 void main(void) {
     int a=12;
-    int b=12;
+    int b=30;
     int Ans = mul( a, b) ;
     
     while(1);

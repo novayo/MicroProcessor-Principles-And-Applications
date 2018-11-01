@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\user\AppData\Local\Temp\s85g.o
+$C:\Users\user\AppData\Local\Temp\sd54.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -73,13 +73,13 @@ $build/default/production/mul.o
 7FB8 mytext CODE >47:D:\MPLAB\Lab\Lab5.X\2
 7FBA mytext CODE >50:D:\MPLAB\Lab\Lab5.X\2
 7FBC mytext CODE >51:D:\MPLAB\Lab\Lab5.X\2
-7FBE mytext CODE >54:D:\MPLAB\Lab\Lab5.X\2
-7FC0 mytext CODE >55:D:\MPLAB\Lab\Lab5.X\2
-7FC2 mytext CODE >57:D:\MPLAB\Lab\Lab5.X\2
+7FBE mytext CODE >53:D:\MPLAB\Lab\Lab5.X\2
+7FBE mytext CODE >55:D:\MPLAB\Lab\Lab5.X\2
+7FC0 mytext CODE >56:D:\MPLAB\Lab\Lab5.X\2
 7FC2 mytext CODE >58:D:\MPLAB\Lab\Lab5.X\2
 7FC4 mytext CODE >59:D:\MPLAB\Lab\Lab5.X\2
 7FC6 mytext CODE >62:D:\MPLAB\Lab\Lab5.X\2
-7FCA mytext CODE >64:D:\MPLAB\Lab\Lab5.X\2
+7FCA mytext CODE >65:D:\MPLAB\Lab\Lab5.X\2
 $dist/default/production\Lab5.X.production.o
 7FCC text0 CODE >4:D:\MPLAB\Lab\Lab5.X\main.c
 7FCC text0 CODE >5:D:\MPLAB\Lab\Lab5.X\main.c
@@ -87,12 +87,12 @@ $dist/default/production\Lab5.X.production.o
 7FDC text0 CODE >7:D:\MPLAB\Lab\Lab5.X\main.c
 7FF8 text0 CODE >9:D:\MPLAB\Lab\Lab5.X\main.c
 7FFC text0 CODE >11:D:\MPLAB\Lab\Lab5.X\main.c
-7F96 cinit CODE >391:C:\Users\user\AppData\Local\Temp\s85g.
-7F96 cinit CODE >393:C:\Users\user\AppData\Local\Temp\s85g.
-7F96 cinit CODE >396:C:\Users\user\AppData\Local\Temp\s85g.
-7F96 cinit CODE >402:C:\Users\user\AppData\Local\Temp\s85g.
-7F96 cinit CODE >404:C:\Users\user\AppData\Local\Temp\s85g.
-7F98 cinit CODE >405:C:\Users\user\AppData\Local\Temp\s85g.
+7F96 cinit CODE >391:C:\Users\user\AppData\Local\Temp\sd54.
+7F96 cinit CODE >393:C:\Users\user\AppData\Local\Temp\sd54.
+7F96 cinit CODE >396:C:\Users\user\AppData\Local\Temp\sd54.
+7F96 cinit CODE >402:C:\Users\user\AppData\Local\Temp\sd54.
+7F96 cinit CODE >404:C:\Users\user\AppData\Local\Temp\sd54.
+7F98 cinit CODE >405:C:\Users\user\AppData\Local\Temp\sd54.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -110,29 +110,29 @@ __Hspace_0 30000E 0 ABS 0 - build/default/production/mul.o
 __Hspace_1 7 0 ABS 0 - build/default/production/mul.o
 __Hspace_2 0 0 ABS 0 - build/default/production/mul.o
 __Hibigdata 0 0 CODE 0 ibigdata build/default/production/mul.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\user\AppData\Local\Temp\s85g.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\user\AppData\Local\Temp\sd54.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data build/default/production/mul.o
 main@a 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab5.X.production.o
 main@b 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab5.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst build/default/production/mul.o
-___sp 0 0 STACK 2 stack C:\Users\user\AppData\Local\Temp\s85g.o
+___sp 0 0 STACK 2 stack C:\Users\user\AppData\Local\Temp\sd54.o
 _main 7FCC 0 CODE 0 text0 dist/default/production\Lab5.X.production.o
-start 0 0 CODE 0 init C:\Users\user\AppData\Local\Temp\s85g.o
+start 0 0 CODE 0 init C:\Users\user\AppData\Local\Temp\sd54.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab5.X.production.o
 __Hpowerup 0 0 CODE 0 powerup build/default/production/mul.o
-__accesstop 80 0 ABS 0 - C:\Users\user\AppData\Local\Temp\s85g.o
-intlevel0 0 0 CODE 0 text C:\Users\user\AppData\Local\Temp\s85g.o
-intlevel1 0 0 CODE 0 text C:\Users\user\AppData\Local\Temp\s85g.o
-intlevel2 0 0 CODE 0 text C:\Users\user\AppData\Local\Temp\s85g.o
-intlevel3 0 0 CODE 0 text C:\Users\user\AppData\Local\Temp\s85g.o
+__accesstop 80 0 ABS 0 - C:\Users\user\AppData\Local\Temp\sd54.o
+intlevel0 0 0 CODE 0 text C:\Users\user\AppData\Local\Temp\sd54.o
+intlevel1 0 0 CODE 0 text C:\Users\user\AppData\Local\Temp\sd54.o
+intlevel2 0 0 CODE 0 text C:\Users\user\AppData\Local\Temp\sd54.o
+intlevel3 0 0 CODE 0 text C:\Users\user\AppData\Local\Temp\sd54.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM build/default/production/mul.o
 __Hifardata 0 0 CODE 0 ifardata build/default/production/mul.o
 __Hclrtext 0 0 ABS 0 clrtext build/default/production/mul.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\user\AppData\Local\Temp\s85g.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\user\AppData\Local\Temp\s85g.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\user\AppData\Local\Temp\sd54.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\user\AppData\Local\Temp\sd54.o
 __Hintcode_body 0 0 ABS 0 intcode_body build/default/production/mul.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs build/default/production/mul.o
-main@RRR 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab5.X.production.o
+main@Ans 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab5.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst build/default/production/mul.o
 __Hintcodelo 0 0 CODE 0 intcodelo build/default/production/mul.o
 __Lintcodelo 0 0 CODE 0 intcodelo build/default/production/mul.o
@@ -156,7 +156,7 @@ __Hstack 0 0 STACK 2 stack build/default/production/mul.o
 __Htext0 0 0 ABS 0 text0 build/default/production/mul.o
 __Hbigbss 0 0 BIGRAM 1 bigbss build/default/production/mul.o
 __Hbigram 0 0 ABS 0 bigram build/default/production/mul.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\user\AppData\Local\Temp\s85g.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\user\AppData\Local\Temp\sd54.o
 __Hcomram 0 0 ABS 0 comram build/default/production/mul.o
 __Hconfig 30000E 0 CONFIG 0 config build/default/production/mul.o
 __Lbank0 0 0 ABS 0 bank0 build/default/production/mul.o
@@ -210,8 +210,8 @@ __Lcomram 0 0 ABS 0 comram build/default/production/mul.o
 __Lconfig 300000 0 CONFIG 0 config build/default/production/mul.o
 __Lfarbss 0 0 FARRAM 0 farbss build/default/production/mul.o
 __Lfardata 0 0 FARRAM 0 fardata build/default/production/mul.o
-stackhi 5FF 0 ABS 0 - C:\Users\user\AppData\Local\Temp\s85g.o
-stacklo 80 0 ABS 0 - C:\Users\user\AppData\Local\Temp\s85g.o
+stackhi 5FF 0 ABS 0 - C:\Users\user\AppData\Local\Temp\sd54.o
+stacklo 80 0 ABS 0 - C:\Users\user\AppData\Local\Temp\sd54.o
 __Lintcode 0 0 CODE 0 intcode build/default/production/mul.o
 __Lintret 0 0 ABS 0 intret build/default/production/mul.o
 __Lirdata 0 0 CODE 0 irdata build/default/production/mul.o
@@ -228,7 +228,7 @@ __Lrparam 0 0 COMRAM 1 rparam build/default/production/mul.o
 __pcinit 7F96 0 CODE 0 cinit dist/default/production\Lab5.X.production.o
 __ptext0 7FCC 0 CODE 0 text0 dist/default/production\Lab5.X.production.o
 __Lstruct 0 0 COMRAM 1 struct build/default/production/mul.o
-__ramtop 600 0 RAM 0 ramtop C:\Users\user\AppData\Local\Temp\s85g.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\user\AppData\Local\Temp\sd54.o
 __Lpowerup 0 0 CODE 0 powerup build/default/production/mul.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data build/default/production/mul.o
 __Lreset_vec 0 0 CODE 0 reset_vec build/default/production/mul.o

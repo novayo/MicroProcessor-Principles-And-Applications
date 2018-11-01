@@ -4006,14 +4006,6 @@ For:
     INCF LATE
 
 
-    RRCF LATC
-    RRCF LATB
-
-
-    BTFSC LATE, 0
-    BSF LATB, 7
-
-
     BTFSS LATB, 0
     GOTO Continue
 
@@ -4022,10 +4014,19 @@ For:
     ADDWF LATC, F
 
 Continue:
+
+    RRCF LATC
+    RRCF LATB
+
+
+    BTFSC LATE, 0
+    BSF LATB, 7
+
     DECFSZ LATD
     GOTO For
 
 
     MOVFF LATB, 0x001
+    MOVFF LATC, 0x002
 
     RETURN

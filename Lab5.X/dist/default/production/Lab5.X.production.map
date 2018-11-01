@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.00\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Lab5.X.production.sym \
   --cmf=dist/default/production\Lab5.X.production.cmf -z -Q18F4520 \
-  -oC:\Users\user\AppData\Local\Temp\s85g.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\user\AppData\Local\Temp\sd54.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Lab5.X.production.map -E1 -ver=XC8 --acfsm=1493 \
   -ASTACK=080h-05ffh -pstack=STACK -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0600h-06FFhx122 -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-07Fh \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\user\AppData\Local\Temp\s85g.o \
+  C:\Users\user\AppData\Local\Temp\sd54.o \
   dist/default/production\Lab5.X.production.o \
   build/default/production/mul.o 
 
@@ -35,7 +35,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\user\AppData\Local\Temp\s85g.o
+C:\Users\user\AppData\Local\Temp\sd54.o
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
@@ -272,7 +272,7 @@ intlevel0                text         000000
 intlevel1                text         000000
 intlevel2                text         000000
 intlevel3                text         000000
-main@RRR                 cstackCOMRAM 000001
+main@Ans                 cstackCOMRAM 000001
 main@a                   cstackCOMRAM 000003
 main@b                   cstackCOMRAM 000005
 stackhi                  (abs)        0005FF
@@ -291,7 +291,7 @@ FUNCTION INFORMATION:
  Auto vars:     Size  Location     Type
   b               2    4[COMRAM] int 
   a               2    2[COMRAM] int 
-  RRR             2    0[COMRAM] int 
+  Ans             2    0[COMRAM] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:

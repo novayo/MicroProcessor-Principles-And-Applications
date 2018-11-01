@@ -37,7 +37,16 @@ For:
     // If C0 == 1, tmp = 1
     BTFSC LATC, 0
     INCF LATE
+
+    // If B0 == 0, continue
+    BTFSS LATB, 0
+    GOTO Continue
     
+    // else C=C+A
+    MOVFF LATA, WREG
+    ADDWF LATC, F
+
+Continue:  
     // Right-shift C and B
     RRCF LATC
     RRCF LATB
@@ -46,20 +55,12 @@ For:
     BTFSC LATE, 0
     BSF LATB, 7
     
-    // If B0 == 0, continue
-    BTFSS LATB, 0
-    GOTO Continue
-    
-    // else C=C+A
-    MOVFF LATA, WREG
-    ADDWF LATC, F
-    
-Continue:    
     DECFSZ LATD
     GOTO For
     
-    // C_B is an answer (C_B is 16 bits -> But I only return B(8 bits) back to main.c)
+    // C_B is an answer 
     MOVFF LATB, 0x001
+    MOVFF LATC, 0x002
     
     RETURN
 
