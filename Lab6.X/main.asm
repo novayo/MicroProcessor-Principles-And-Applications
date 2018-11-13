@@ -1,71 +1,97 @@
-LIST p=18f4520		    
+LIST p=18f4520		
 #include<p18f4520.inc>
-    CONFIG OSC = INTIO67  ; 用內建的震盪器
-    CONFIG WDT = OFF	   
-    CONFIG LVP = OFF
-    
-    
-#define SWITCH PORTA, 4
-L1 EQU 0x14
-L2 EQU 0x15
-org   0x00	
-    
-; DELAY 0.25ms
-DELAY MACRO NUM1, NUM2
-    LOCAL LOOP1 ;local macro內的label
-    LOCAL LOOP2
-    MOVLW d'180'
+    CONFIG  OSC = INTIO67       ; Oscillator Selection bits (Internal oscillator block, port function on RA6 and RA7)
+    CONFIG  WDT = OFF           ; Watchdog Timer Enable bit (WDT disabled (control is placed on the SWDTEN bit))
+    CONFIG  LVP = OFF
+
+#define SWITCH PORTA,4    
+    L1	    EQU 0X14
+    L2	    EQU 0X15
+DELAY2 MACRO num1,num2
+    BTFSC SWITCH
+    DELAYY d'800', d'320'
+    local LOOP1	;prevent compile error
+    local LOOP2               
+    MOVLW num2
     MOVWF L2
     LOOP2:
-	MOVLW d'200'
-	MOVWF L1
+	MOVLW num1                   
+	MOVWF L1  
     LOOP1:
 	NOP
 	NOP
 	NOP
 	NOP
-	DECFSZ L1
-	BRA LOOP1
-	DECFSZ L2
-	BRA LOOP2
+	BTFSS SWITCH 
+	bra BLINK
+	DECFSZ L1,1
+	    GOTO LOOP1	
+	DECFSZ L2,1
+	    GOTO LOOP2
     ENDM
-DELAY d'200', d'180'
-
-    CLRF PORTA ; 將input設成開關，故要看開關的狀態，而這裡用RA4
-    CLRF LATA ; 將RA0~RA7 輸出設為0，因為RA4要設成input
-    BSF TRISA, 4 ;RA4 is input
-    
-    MOVLW 0x0f
-    MOVWF ADCON1 ; 將輸入設成Digital，詳細看spec的 p.224 (之後會用到)
-    
-    CLRF TRISD ;RD0 is output
-    CLRF LATD ;等等要來設定輸出是1
-    
-    LOOP:
-	BCF LATD, 0 ;RD0 輸出設成0 (燈泡會暗)
-	BCF LATD, 1 ;RD1 輸出設成0 (燈泡會暗)
-	BCF LATD, 2 ;RD2 輸出設成0 (燈泡會暗)
-	BCF LATD, 3 ;RD3 輸出設成0 (燈泡會暗)
-	BTFSS SWITCH ; 如果第4個bit(定義在define)變成0的話，下一行設成NOP，否則就不做事
-	BRA LOOP
+DELAY MACRO num1,num2
+    BTFSC SWITCH
+    DELAYY d'800', d'320'
+    local LOOP1	;prevent compile error
+    local LOOP2               
+    MOVLW num2
+    MOVWF L2
+    LOOP2:
+	MOVLW num1                   
+	MOVWF L1  
     LOOP1:
-	BCF LATD, 3 ;RD3 輸出設成0 (燈泡會暗)
-	BSF LATD, 0 ;RD0 輸出設成1 (燈泡會亮)
-	DELAY d'800', d'720' ; DELAY 1s
-	
-	BCF LATD, 0 ;RD0 輸出設成0 (燈泡會暗)
-	BSF LATD, 1 ;RD1 輸出設成1 (燈泡會亮)
-	DELAY d'800', d'720' ; DELAY 1s
-	
-	BCF LATD, 1 ;RD1 輸出設成0 (燈泡會暗)
-	BSF LATD, 2 ;RD2 輸出設成1 (燈泡會亮)
-	DELAY d'800', d'720' ; DELAY 1s
-	
-	BCF LATD, 2 ;RD2 輸出設成0 (燈泡會暗)
-	BSF LATD, 3 ;RD3 輸出設成1 (燈泡會亮)
-	DELAY d'800', d'720' ; DELAY 1s
-	
-	BRA LOOP1
-	
-END
+	NOP
+	NOP
+	NOP
+	NOP
+	BTFSS SWITCH
+	bra BLINK_REVERSE
+	DECFSZ L1,1
+	    GOTO LOOP1
+	DECFSZ L2,1
+	    GOTO LOOP2
+    ENDM
 
+DELAYY MACRO num1,num2
+    local LOOP1	;prevent compile error
+    local LOOP2               
+    MOVLW num2
+    MOVWF L2
+    LOOP2:
+	MOVLW num1                   
+	MOVWF L1  
+    LOOP1:
+	NOP
+	NOP
+	NOP
+	NOP
+	DECFSZ L1,1
+	    GOTO LOOP1
+	DECFSZ L2,1
+	    GOTO LOOP2
+    ENDM
+    
+ORG	0x00 ; setting initial address
+    
+INITIAL:    
+	movlw 0x10	    ;2'b0001_0000
+	movff WREG, TRISA   ;TRISA = WREG
+	movlw 0x00	    ;2'b0000_0000
+    	movff WREG, TRISD   ;TRISD = WREG
+	movlw 0x11	    ;2'b0001_0001
+	movff WREG, LATD    ;LATD = WREG
+	clrf WREG
+	clrf PORTA
+
+		
+BLINK:
+	DELAY d'200', 10
+	RLNCF LATD
+	GOTO BLINK
+	
+BLINK_REVERSE:
+	DELAY2 d'200', 10
+	RRNCF LATD
+	GOTO BLINK_REVERSE
+
+	END

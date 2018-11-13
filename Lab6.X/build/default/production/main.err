@@ -1,0 +1,16 @@
+Warning[205] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 1 : Found directive in column 1. (LIST)
+Warning[207] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 11 : Found label after column 1. (L1)
+Warning[207] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 12 : Found label after column 1. (L2)
+Warning[205] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 77 : Found directive in column 1. (ORG)
+Warning[202] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 61 : Argument out of range.  Least significant bits used.
+Warning[207] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 63 : Found label after column 1. (LOOP2)
+Warning[202] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 64 : Argument out of range.  Least significant bits used.
+Warning[207] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 66 : Found label after column 1. (LOOP1)
+Warning[207] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 42 : Found label after column 1. (LOOP2)
+Warning[207] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 45 : Found label after column 1. (LOOP1)
+Warning[202] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 61 : Argument out of range.  Least significant bits used.
+Warning[207] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 63 : Found label after column 1. (LOOP2)
+Warning[202] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 64 : Argument out of range.  Least significant bits used.
+Warning[207] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 66 : Found label after column 1. (LOOP1)
+Warning[207] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 20 : Found label after column 1. (LOOP2)
+Warning[207] D:\MPLAB\LAB\LAB6.X\MAIN.ASM 23 : Found label after column 1. (LOOP1)
