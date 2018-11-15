@@ -2,6 +2,7 @@ Warning[207] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 58 : Found label after column 1. (COUN
 Warning[207] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 59 : Found label after column 1. (L1)
 Warning[207] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 60 : Found label after column 1. (L2)
 Warning[207] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 64 : Found label after column 1. (DELAY)
+Warning[205] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 104 : Found directive in column 1. (ENDM)
 Warning[202] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 67 : Argument out of range.  Least significant bits used.
 Warning[207] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 69 : Found label after column 1. (LOOP2)
 Warning[202] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 70 : Argument out of range.  Least significant bits used.
@@ -18,4 +19,4 @@ Warning[202] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 67 : Argument out of range.  Least sig
 Warning[207] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 69 : Found label after column 1. (LOOP2)
 Warning[202] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 70 : Argument out of range.  Least significant bits used.
 Warning[207] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 72 : Found label after column 1. (LOOP1)
-Warning[205] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 126 : Found directive in column 1. (END)
+Warning[205] D:\MPLAB\LAB\LAB7.X\MAIN.ASM 134 : Found directive in column 1. (END)

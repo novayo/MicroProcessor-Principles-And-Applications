@@ -1,4 +1,4 @@
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE  1
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00033 
                       00034 ; CONFIG5H
                       00035   CONFIG  CPB = OFF             ; Boot Block Code Protection bit (Boot block (000000-0007FFh) not code-p
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE  2
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ Warning[207]: Found label after column 1. (DELAY)
                       00074         NOP
                       00075         NOP
                       00076         NOP
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE  3
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -127,145 +127,180 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00079         DECFSZ L2,1
                       00080             GOTO LOOP2
                       00081     ENDM
-                      00082  
-000004                00083 ISR:
-                      00084     ORG 0x08
-                      00085     ;BCF INTCON, INT0IE ; 關閉 INT0 External Interrupt Enable bit 
-                      00086     
-                      00087     ; 這裡放ISR要執行的程式
-000008 8083           00088     BSF PORTD, 0 ;將RD0點亮
+                      00082 
+                      00083 Blink MACRO r
+                      00084     local E
+                      00085     BTFSS r, INT0IF
+                      00086     GOTO E
+                      00087  
+                      00088     BSF PORTD, 0 ;將RD0點亮
                       00089     DELAY d'400', d'360' ;DELAY 0.5s
-  0000                    M     local LOOP1 ;prevent compile error
-  0000                    M     local LOOP2               
-Warning[202]: Argument out of range.  Least significant bits used.
-00000A 0E68               M     MOVLW d'360'
-00000C 6E25               M     MOVWF L2
-Warning[207]: Found label after column 1. (LOOP2)
-00000E                    M     LOOP2:
-Warning[202]: Argument out of range.  Least significant bits used.
-00000E 0E90               M         MOVLW d'400'                 
-000010 6E24               M         MOVWF L1  
-Warning[207]: Found label after column 1. (LOOP1)
-000012                    M     LOOP1:
-000012 0000               M         NOP
-000014 0000               M         NOP
-000016 0000               M         NOP
-000018 0000               M         NOP
-00001A 2E24               M         DECFSZ L1,1
-00001C EF?? F???          M             GOTO LOOP1
-000020 2E25               M         DECFSZ L2,1
-000022 EF?? F???          M             GOTO LOOP2
-000026 9083           00090     BCF PORTD, 0 ;將RD0關掉
+                      00090     BCF PORTD, 0 ;將RD0關掉
                       00091     
-000028 8283           00092     BSF PORTD, 1 ;將RD1點亮
+                      00092     BSF PORTD, 1 ;將RD1點亮
                       00093     DELAY d'400', d'360' ;DELAY 0.5s
-  0000                    M     local LOOP1 ;prevent compile error
-  0000                    M     local LOOP2               
-Warning[202]: Argument out of range.  Least significant bits used.
-00002A 0E68               M     MOVLW d'360'
-00002C 6E25               M     MOVWF L2
-Warning[207]: Found label after column 1. (LOOP2)
-00002E                    M     LOOP2:
-Warning[202]: Argument out of range.  Least significant bits used.
-00002E 0E90               M         MOVLW d'400'                 
-000030 6E24               M         MOVWF L1  
-Warning[207]: Found label after column 1. (LOOP1)
-000032                    M     LOOP1:
-000032 0000               M         NOP
-000034 0000               M         NOP
-000036 0000               M         NOP
-000038 0000               M         NOP
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE  4
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
-00003A 2E24               M         DECFSZ L1,1
-00003C EF?? F???          M             GOTO LOOP1
-000040 2E25               M         DECFSZ L2,1
-000042 EF?? F???          M             GOTO LOOP2
-000046 9283           00094     BCF PORTD, 1 ;將RD1關掉
+                      00094     BCF PORTD, 1 ;將RD1關掉
                       00095     
-000048 8483           00096     BSF PORTD, 2 ;將RD2點亮
+                      00096     BSF PORTD, 2 ;將RD2點亮
                       00097     DELAY d'400', d'360' ;DELAY 0.5s
-  0000                    M     local LOOP1 ;prevent compile error
-  0000                    M     local LOOP2               
-Warning[202]: Argument out of range.  Least significant bits used.
-00004A 0E68               M     MOVLW d'360'
-00004C 6E25               M     MOVWF L2
-Warning[207]: Found label after column 1. (LOOP2)
-00004E                    M     LOOP2:
-Warning[202]: Argument out of range.  Least significant bits used.
-00004E 0E90               M         MOVLW d'400'                 
-000050 6E24               M         MOVWF L1  
-Warning[207]: Found label after column 1. (LOOP1)
-000052                    M     LOOP1:
-000052 0000               M         NOP
-000054 0000               M         NOP
-000056 0000               M         NOP
-000058 0000               M         NOP
-00005A 2E24               M         DECFSZ L1,1
-00005C EF?? F???          M             GOTO LOOP1
-000060 2E25               M         DECFSZ L2,1
-000062 EF?? F???          M             GOTO LOOP2
-000066 9483           00098     BCF PORTD, 2 ;將RD2關掉
+                      00098     BCF PORTD, 2 ;將RD2關掉
                       00099     
-000068 8683           00100     BSF PORTD, 3 ;將RD3點亮
+                      00100     BSF PORTD, 3 ;將RD3點亮
                       00101     DELAY d'400', d'360' ;DELAY 0.5s
+                      00102     BCF PORTD, 3 ;將RD3關掉
+                      00103 E:   
+Warning[205]: Found directive in column 1. (ENDM)
+                      00104 ENDM
+                      00105 
+000004                00106 ISR:
+                      00107     ORG 0x08
+                      00108     
+                      00109     ; 這裡放ISR要執行的程式
+                      00110     Blink INTCON
+  0000                    M     local E
+000008 A2F2               M     BTFSS INTCON, INT0IF
+00000A EF?? F???          M     GOTO E
+                          M  
+00000E 8083               M     BSF PORTD, 0 ;將RD0點亮
+                          M     DELAY d'400', d'360' ;DELAY 0.5s
   0000                    M     local LOOP1 ;prevent compile error
   0000                    M     local LOOP2               
 Warning[202]: Argument out of range.  Least significant bits used.
-00006A 0E68               M     MOVLW d'360'
-00006C 6E25               M     MOVWF L2
+000010 0E68               M     MOVLW d'360'
+000012 6E25               M     MOVWF L2
 Warning[207]: Found label after column 1. (LOOP2)
-00006E                    M     LOOP2:
+000014                    M     LOOP2:
 Warning[202]: Argument out of range.  Least significant bits used.
-00006E 0E90               M         MOVLW d'400'                 
-000070 6E24               M         MOVWF L1  
+000014 0E90               M         MOVLW d'400'                 
+000016 6E24               M         MOVWF L1  
 Warning[207]: Found label after column 1. (LOOP1)
-000072                    M     LOOP1:
-000072 0000               M         NOP
-000074 0000               M         NOP
-000076 0000               M         NOP
-000078 0000               M         NOP
-00007A 2E24               M         DECFSZ L1,1
-00007C EF?? F???          M             GOTO LOOP1
-000080 2E25               M         DECFSZ L2,1
-000082 EF?? F???          M             GOTO LOOP2
-000086 9683           00102     BCF PORTD, 3 ;將RD3關掉
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE  5
+000018                    M     LOOP1:
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                      00103     
-000088 92F2           00104     BCF INTCON, INT0IF ; 將Flag bit清除
-00008A 0010           00105     RETFIE
-                      00106     
-00008C                00107 Initial:
-00008C 6A81           00108     CLRF PORTB
-00008E 6A8A           00109     CLRF LATB
-000090 8093           00110     BSF TRISB, 0
-000092 6A95           00111     CLRF TRISD
-000094 6A83           00112     CLRF PORTD 
-                      00113     
-000096 0E0F           00114     MOVLW 0x0F
-000098 6EC1           00115     MOVWF ADCON1, 0 ;將AN12轉成digital輸出
-                      00116     
-                      00117     ;設定INT0
-00009A 88F2           00118     BSF INTCON, INT0IE ; 開啟 INT0 External Interrupt Enable bit 
-00009C 92F2           00119     BCF INTCON, INT0IF ; 將Flag bit清除
-00009E 8CF1           00120     BSF INTCON2, INTEDG0 ;1~0時觸發
-0000A0 8EF2           00121     BSF INTCON, GIE    ; 開啟是否跳進ISR
-                      00122     
-0000A2                00123 Main:
-0000A2 EF?? F???      00124     GOTO Main
-                      00125     
+000018 0000               M         NOP
+00001A 0000               M         NOP
+00001C 0000               M         NOP
+00001E 0000               M         NOP
+000020 2E24               M         DECFSZ L1,1
+000022 EF?? F???          M             GOTO LOOP1
+000026 2E25               M         DECFSZ L2,1
+000028 EF?? F???          M             GOTO LOOP2
+00002C 9083               M     BCF PORTD, 0 ;將RD0關掉
+                          M     
+00002E 8283               M     BSF PORTD, 1 ;將RD1點亮
+                          M     DELAY d'400', d'360' ;DELAY 0.5s
+  0000                    M     local LOOP1 ;prevent compile error
+  0000                    M     local LOOP2               
+Warning[202]: Argument out of range.  Least significant bits used.
+000030 0E68               M     MOVLW d'360'
+000032 6E25               M     MOVWF L2
+Warning[207]: Found label after column 1. (LOOP2)
+000034                    M     LOOP2:
+Warning[202]: Argument out of range.  Least significant bits used.
+000034 0E90               M         MOVLW d'400'                 
+000036 6E24               M         MOVWF L1  
+Warning[207]: Found label after column 1. (LOOP1)
+000038                    M     LOOP1:
+000038 0000               M         NOP
+00003A 0000               M         NOP
+00003C 0000               M         NOP
+00003E 0000               M         NOP
+000040 2E24               M         DECFSZ L1,1
+000042 EF?? F???          M             GOTO LOOP1
+000046 2E25               M         DECFSZ L2,1
+000048 EF?? F???          M             GOTO LOOP2
+00004C 9283               M     BCF PORTD, 1 ;將RD1關掉
+                          M     
+00004E 8483               M     BSF PORTD, 2 ;將RD2點亮
+                          M     DELAY d'400', d'360' ;DELAY 0.5s
+  0000                    M     local LOOP1 ;prevent compile error
+  0000                    M     local LOOP2               
+Warning[202]: Argument out of range.  Least significant bits used.
+000050 0E68               M     MOVLW d'360'
+000052 6E25               M     MOVWF L2
+Warning[207]: Found label after column 1. (LOOP2)
+000054                    M     LOOP2:
+Warning[202]: Argument out of range.  Least significant bits used.
+000054 0E90               M         MOVLW d'400'                 
+000056 6E24               M         MOVWF L1  
+Warning[207]: Found label after column 1. (LOOP1)
+000058                    M     LOOP1:
+000058 0000               M         NOP
+00005A 0000               M         NOP
+00005C 0000               M         NOP
+00005E 0000               M         NOP
+000060 2E24               M         DECFSZ L1,1
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+000062 EF?? F???          M             GOTO LOOP1
+000066 2E25               M         DECFSZ L2,1
+000068 EF?? F???          M             GOTO LOOP2
+00006C 9483               M     BCF PORTD, 2 ;將RD2關掉
+                          M     
+00006E 8683               M     BSF PORTD, 3 ;將RD3點亮
+                          M     DELAY d'400', d'360' ;DELAY 0.5s
+  0000                    M     local LOOP1 ;prevent compile error
+  0000                    M     local LOOP2               
+Warning[202]: Argument out of range.  Least significant bits used.
+000070 0E68               M     MOVLW d'360'
+000072 6E25               M     MOVWF L2
+Warning[207]: Found label after column 1. (LOOP2)
+000074                    M     LOOP2:
+Warning[202]: Argument out of range.  Least significant bits used.
+000074 0E90               M         MOVLW d'400'                 
+000076 6E24               M         MOVWF L1  
+Warning[207]: Found label after column 1. (LOOP1)
+000078                    M     LOOP1:
+000078 0000               M         NOP
+00007A 0000               M         NOP
+00007C 0000               M         NOP
+00007E 0000               M         NOP
+000080 2E24               M         DECFSZ L1,1
+000082 EF?? F???          M             GOTO LOOP1
+000086 2E25               M         DECFSZ L2,1
+000088 EF?? F???          M             GOTO LOOP2
+00008C 9683               M     BCF PORTD, 3 ;將RD3關掉
+00008E                    M E:   
+                      00111     
+00008E 92F2           00112     BCF INTCON, INT0IF ; 將Flag bit清除
+000090 0010           00113     RETFIE
+                      00114     
+000092                00115 Initial:
+000092 6A81           00116     CLRF PORTB
+000094 6A8A           00117     CLRF LATB
+000096 8093           00118     BSF TRISB, 0
+000098 6A95           00119     CLRF TRISD
+00009A 6A83           00120     CLRF PORTD 
+                      00121     
+00009C 0EFB           00122     MOVLW 0x0Fb
+00009E 6EC1           00123     MOVWF ADCON1, 0 ;將AN12轉成digital輸出
+                      00124     
+                      00125     ;設定INT0
+0000A0 88F2           00126     BSF INTCON, INT0IE ; 開啟 INT0 External Interrupt Enable bit 
+0000A2 92F2           00127     BCF INTCON, INT0IF ; 將Flag bit清除
+0000A4 8CF1           00128     BSF INTCON2, INTEDG0 ;1~0時觸發
+0000A6 8EF2           00129     BSF INTCON, GIE    ; 開啟是否跳進ISR
+                      00130     
+0000A8                00131 Main:
+0000A8 EF?? F???      00132     GOTO Main
+                      00133     
 Warning[205]: Found directive in column 1. (END)
-                      00126 END
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE  6
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00134 END
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE  7
 
 
 SYMBOL TABLE
@@ -324,7 +359,7 @@ BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
 BOR                               00000000
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE  7
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE  8
 
 
 SYMBOL TABLE
@@ -333,6 +368,7 @@ SYMBOL TABLE
 BRG16                             00000003
 BRGH                              00000002
 BSR                               00000FE0
+Blink                             
 C                                 00000000
 C1INV                             00000004
 C1OUT_CMCON                       00000006
@@ -382,13 +418,13 @@ CLKI                              00000007
 CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
-CM2                               00000002
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE  8
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE  9
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+CM2                               00000002
 CMCON                             00000FB4
 CMIE                              00000006
 CMIF                              00000006
@@ -441,13 +477,13 @@ FAST                              00000001
 FERR                              00000002
 FLT0                              00000000
 FLTS                              00000002
-FREE                              00000004
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE  9
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 10
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+FREE                              00000004
 FSR0                              00000000
 FSR0H                             00000FEA
 FSR0L                             00000FE9
@@ -500,13 +536,13 @@ INT2IE                            00000004
 INT2IF                            00000001
 INT2IP                            00000007
 INT2P                             00000007
-INTCON                            00000FF2
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 10
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 11
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+INTCON                            00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
 INTEDG0                           00000006
@@ -523,7 +559,7 @@ IRCF2                             00000006
 IRVST                             00000005
 ISR                               00000004
 IVRST                             00000005
-Initial                           0000008C
+Initial                           00000092
 KBI0                              00000004
 KBI1                              00000005
 KBI2                              00000006
@@ -559,13 +595,13 @@ LATC6                             00000006
 LATC7                             00000007
 LATD                              00000F8C
 LATD0                             00000000
-LATD1                             00000001
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 11
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 12
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+LATD1                             00000001
 LATD2                             00000002
 LATD3                             00000003
 LATD4                             00000004
@@ -591,7 +627,7 @@ LVV1                              00000001
 LVV2                              00000002
 LVV3                              00000003
 MCLR                              00000003
-Main                              000000A2
+Main                              000000A8
 N                                 00000004
 NOT_A                             00000005
 NOT_ADDRESS                       00000005
@@ -618,13 +654,13 @@ OSC2                              00000006
 OSCCON                            00000FD3
 OSCFIE                            00000007
 OSCFIF                            00000007
-OSCFIP                            00000007
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 12
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 13
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+OSCFIP                            00000007
 OSCTUNE                           00000F9B
 OSTS                              00000003
 OV                                00000003
@@ -677,13 +713,13 @@ POSTDEC2                          00000FDD
 POSTINC0                          00000FEE
 POSTINC1                          00000FE6
 POSTINC2                          00000FDE
-PR2                               00000FCB
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 13
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 14
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+PR2                               00000FCB
 PREINC0                           00000FEC
 PREINC1                           00000FE4
 PREINC2                           00000FDC
@@ -736,13 +772,13 @@ RC2                               00000002
 RC3                               00000003
 RC4                               00000004
 RC5                               00000005
-RC6                               00000006
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 14
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 15
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+RC6                               00000006
 RC7                               00000007
 RCEN                              00000003
 RCIDL                             00000006
@@ -795,13 +831,13 @@ SP3                               00000003
 SP4                               00000004
 SPBRG                             00000FAF
 SPBRGH                            00000FB0
-SPEN                              00000007
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 15
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 16
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+SPEN                              00000007
 SREN                              00000005
 SS                                00000005
 SSPADD                            00000FC8
@@ -854,13 +890,13 @@ T2CON                             00000FCA
 T2OUTPS0                          00000003
 T2OUTPS1                          00000004
 T2OUTPS2                          00000005
-T2OUTPS3                          00000006
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 16
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 17
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+T2OUTPS3                          00000006
 T3CCP1                            00000003
 T3CCP2                            00000006
 T3CKPS0                           00000004
@@ -913,13 +949,13 @@ TRISA                             00000F92
 TRISA0                            00000000
 TRISA1                            00000001
 TRISA2                            00000002
-TRISA3                            00000003
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 17
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 18
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+TRISA3                            00000003
 TRISA4                            00000004
 TRISA5                            00000005
 TRISA6                            00000006
@@ -972,13 +1008,13 @@ TXIP                              00000004
 TXREG                             00000FAD
 TXSTA                             00000FAC
 UA                                00000001
-VCFG0                             00000004
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 18
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 19
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+VCFG0                             00000004
 VCFG1                             00000005
 VDIRMAG                           00000007
 VPP                               00000003
@@ -1031,13 +1067,13 @@ _DEBUG_ON_4L                      0000007F
 _DEVID1                           003FFFFE
 _DEVID2                           003FFFFF
 _EBTR0_OFF_7L                     000000FF
-_EBTR0_ON_7L                      000000FE
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 19
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 20
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+_EBTR0_ON_7L                      000000FE
 _EBTR1_OFF_7L                     000000FF
 _EBTR1_ON_7L                      000000FD
 _EBTR2_OFF_7L                     000000FF
@@ -1090,13 +1126,13 @@ _WDTPS_256_2H                     000000F1
 _WDTPS_2_2H                       000000E3
 _WDTPS_32768_2H                   000000FF
 _WDTPS_32_2H                      000000EB
-_WDTPS_4096_2H                    000000F9
-MPASM 5.81                          MAIN.ASM   11-14-2018  2:39:35         PAGE 20
+MPASM 5.81                          MAIN.ASM   11-15-2018  15:28:48         PAGE 21
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+_WDTPS_4096_2H                    000000F9
 _WDTPS_4_2H                       000000E5
 _WDTPS_512_2H                     000000F3
 _WDTPS_64_2H                      000000ED
@@ -1124,7 +1160,7 @@ __18F4520                         00000001
 __DEBUG                           
 
 Errors   :     0
-Warnings :    21 reported,     0 suppressed
+Warnings :    22 reported,     0 suppressed
 Messages :     0 reported,     0 suppressed
 
 

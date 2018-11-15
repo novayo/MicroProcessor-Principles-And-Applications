@@ -75,15 +75,16 @@
 	NOP
 	NOP
 	DECFSZ L1,1
-	    GOTO LOOP1
+	BRA LOOP1
 	DECFSZ L2,1
-	    GOTO LOOP2
+	BRA LOOP2
     ENDM
+
+Blink MACRO r
+    local E
+    BTFSS r, INT0IF
+    GOTO E
  
-ISR:
-    ORG 0x08
-    
-    ; 這裡放ISR要執行的程式
     BSF PORTD, 0 ;將RD0點亮
     DELAY d'400', d'360' ;DELAY 0.5s
     BCF PORTD, 0 ;將RD0關掉
@@ -99,6 +100,14 @@ ISR:
     BSF PORTD, 3 ;將RD3點亮
     DELAY d'400', d'360' ;DELAY 0.5s
     BCF PORTD, 3 ;將RD3關掉
+E:   
+ENDM
+
+ISR:
+    ORG 0x08
+    
+    ; 這裡放ISR要執行的程式
+    Blink INTCON
     
     BCF INTCON, INT0IF ; 將Flag bit清除
     RETFIE
@@ -110,7 +119,7 @@ Initial:
     CLRF TRISD
     CLRF PORTD 
     
-    MOVLW 0x0F
+    MOVLW 0x0Fb
     MOVWF ADCON1, 0 ;將AN12轉成digital輸出
     
     ;設定INT0
