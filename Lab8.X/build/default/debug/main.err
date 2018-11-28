@@ -1,0 +1,8 @@
+Warning[205] D:\MPLAB\LAB\LAB8.X\MAIN.ASM 1 : Found directive in column 1. (LIST)
+Warning[207] D:\MPLAB\LAB\LAB8.X\MAIN.ASM 65 : Found label after column 1. (ISR)
+Warning[207] D:\MPLAB\LAB\LAB8.X\MAIN.ASM 76 : Found label after column 1. (B2)
+Warning[207] D:\MPLAB\LAB\LAB8.X\MAIN.ASM 85 : Found label after column 1. (RB)
+Warning[207] D:\MPLAB\LAB\LAB8.X\MAIN.ASM 88 : Found label after column 1. (Init)
+Warning[207] D:\MPLAB\LAB\LAB8.X\MAIN.ASM 94 : Found label after column 1. (MAIN)
+Warning[207] D:\MPLAB\LAB\LAB8.X\MAIN.ASM 97 : Found label after column 1. (INIT_IO)
+Warning[207] D:\MPLAB\LAB\LAB8.X\MAIN.ASM 102 : Found label after column 1. (INIT_TMR2)
