@@ -4529,13 +4529,15 @@ void __attribute__((picinterrupt("high_priority"))) Hi_ISR(void)
     if(PIR1bits.ADIF){
         ans[i] = ADRES;
         i++;
-        if (i==11) i = 0;
+        if (i==10) i = 0;
+
         PIR1bits.ADIF = 0;
         ADCON0bits.ADON = 1;
+        PIR2bits.CCP2IF = 0;
     }
     else if(PIR2bits.CCP2IF){
         PIR2bits.CCP2IF = 0;
-        CCPR2 = 250000/8;
+
     }
     return ;
 }
@@ -4564,7 +4566,7 @@ void adc_init(void){
     ADCON0bits.CHS2 = 1;
     ADCON0bits.CHS1 = 1;
     ADCON0bits.CHS0 = 1;
-    ADCON0bits.GO = 0;
+
     ADCON0bits.ADON = 1;
 
     TRISEbits.TRISE2 = 1;
@@ -4591,13 +4593,19 @@ void adc_init(void){
 
     RCONbits.IPEN = 1;
     INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
 }
 
 void ccp2_init(void){
 
-    CCP2CON = 0b00001011;
+
+    CCP2CONbits.CCP2M3 = 1;
+    CCP2CONbits.CCP2M2 = 0;
+    CCP2CONbits.CCP2M1 = 1;
+    CCP2CONbits.CCP2M0 = 1;
 
     PIE2bits.CCP2IE = 1;
+    IPR2bits.CCP2IP = 1;
 
 
 
@@ -4607,5 +4615,8 @@ void ccp2_init(void){
 void tmr_init(void){
 
 
-    T3CON = 0b11001001;
+    T3CONbits.RD16 = 1;
+    T3CONbits.T3CCP2 = 1;
+    T3CONbits.T3CCP1 = 1;
+    T3CONbits.TMR3ON =1;
 }
