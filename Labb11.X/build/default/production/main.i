@@ -4776,6 +4776,7 @@ void Mode2() {
     float voltage = 0.0;
     while(strcmp(GetString(), "z") != 0)
     {
+        ClearBuffer();
         digital=ADC_Read(0);
         voltage = digital* ((float)5/1023);
 
@@ -4784,7 +4785,7 @@ void Mode2() {
         sprintf(str, "%f", voltage);
         UART_Write_Text(str);
         for(int i = 0 ; i < 10000 ; i++) ;
-        ClearBuffer();
+
     }
 
     ClearBuffer();

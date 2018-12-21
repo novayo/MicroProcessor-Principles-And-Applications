@@ -511,19 +511,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 23:     {
 {
 "24
-[; ;main.c: 24:         digital=ADC_Read(0);
-[e = _digital ( _ADC_Read (1 -> 0 `i ]
+[; ;main.c: 24:         ClearBuffer();
+[e ( _ClearBuffer ..  ]
 "25
-[; ;main.c: 25:         voltage = digital* ((float)5/1023);
+[; ;main.c: 25:         digital=ADC_Read(0);
+[e = _digital ( _ADC_Read (1 -> 0 `i ]
+"26
+[; ;main.c: 26:         voltage = digital* ((float)5/1023);
 [e = _voltage * -> _digital `f / -> -> 5 `i `f -> -> 1023 `i `f ]
-"29
-[; ;main.c: 29:         sprintf(str, "%f", voltage);
-[e ( _sprintf (1 , (. , &U _str :s 4C -> _voltage `d ]
 "30
-[; ;main.c: 30:         UART_Write_Text(str);
-[e ( _UART_Write_Text (1 &U _str ]
+[; ;main.c: 30:         sprintf(str, "%f", voltage);
+[e ( _sprintf (1 , (. , &U _str :s 4C -> _voltage `d ]
 "31
-[; ;main.c: 31:         for(int i = 0 ; i < 10000 ; i++) ;
+[; ;main.c: 31:         UART_Write_Text(str);
+[e ( _UART_Write_Text (1 &U _str ]
+"32
+[; ;main.c: 32:         for(int i = 0 ; i < 10000 ; i++) ;
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -534,106 +537,103 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < _i -> 10000 `i 289  ]
 [e :U 290 ]
 }
-"32
-[; ;main.c: 32:         ClearBuffer();
-[e ( _ClearBuffer ..  ]
-"33
-[; ;main.c: 33:     }
+"34
+[; ;main.c: 34:     }
 }
 [e :U 286 ]
 "22
 [; ;main.c: 22:     while(strcmp(GetString(), "z") != 0)
 [e $ != ( _strcmp (2 , -> ( _GetString ..  `*Cuc :s 3C -> 0 `i 287  ]
 [e :U 288 ]
-"35
-[; ;main.c: 35:     ClearBuffer();
-[e ( _ClearBuffer ..  ]
 "36
-[; ;main.c: 36: }
+[; ;main.c: 36:     ClearBuffer();
+[e ( _ClearBuffer ..  ]
+"37
+[; ;main.c: 37: }
 [e :UE 285 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"38
-[; ;main.c: 38: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
 "39
-[; ;main.c: 39: {
+[; ;main.c: 39: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"40
+[; ;main.c: 40: {
 {
 [e :U _main ]
 [f ]
-"41
-[; ;main.c: 41:     SYSTEM_Initialize() ;
+"42
+[; ;main.c: 42:     SYSTEM_Initialize() ;
 [e ( _SYSTEM_Initialize ..  ]
-"43
-[; ;main.c: 43:     while(1) {
+"44
+[; ;main.c: 44:     while(1) {
 [e :U 294 ]
 {
-"46
-[; ;main.c: 46:         strcpy(str, GetString());
-[e ( _strcpy (2 , &U _str -> ( _GetString ..  `*Cuc ]
 "47
-[; ;main.c: 47:         if (strcmp("clear", str) == 0) ClearBuffer();
+[; ;main.c: 47:         strcpy(str, GetString());
+[e ( _strcpy (2 , &U _str -> ( _GetString ..  `*Cuc ]
+"48
+[; ;main.c: 48:         if (strcmp("clear", str) == 0) ClearBuffer();
 [e $ ! == ( _strcmp (2 , :s 5C -> &U _str `*Cuc -> 0 `i 296  ]
 [e ( _ClearBuffer ..  ]
 [e $U 297  ]
-"49
-[; ;main.c: 49:         else if (strcmp("mode1", str) == 0) Mode1();
+"50
+[; ;main.c: 50:         else if (strcmp("mode1", str) == 0) Mode1();
 [e :U 296 ]
 [e $ ! == ( _strcmp (2 , :s 6C -> &U _str `*Cuc -> 0 `i 298  ]
 [e ( _Mode1 ..  ]
 [e $U 299  ]
-"51
-[; ;main.c: 51:         else if (strcmp("mode2", str) == 0) Mode2();
+"52
+[; ;main.c: 52:         else if (strcmp("mode2", str) == 0) Mode2();
 [e :U 298 ]
 [e $ ! == ( _strcmp (2 , :s 7C -> &U _str `*Cuc -> 0 `i 300  ]
 [e ( _Mode2 ..  ]
 [e :U 300 ]
 [e :U 299 ]
 [e :U 297 ]
-"54
-[; ;main.c: 54:     }
+"55
+[; ;main.c: 55:     }
 }
 [e :U 293 ]
 [e $U 294  ]
 [e :U 295 ]
-"55
-[; ;main.c: 55:     return;
+"56
+[; ;main.c: 56:     return;
 [e $UE 292  ]
-"57
-[; ;main.c: 57: }
+"58
+[; ;main.c: 58: }
 [e :UE 292 ]
 }
 [v $root$_Hi_ISR `(v ~T0 @X0 0 e ]
-"61
-[; ;main.c: 61: void __attribute__((picinterrupt("high_priority"))) Hi_ISR(void)
-[v _Hi_ISR `(v ~T41 @X0 1 ef ]
 "62
-[; ;main.c: 62: {
+[; ;main.c: 62: void __attribute__((picinterrupt("high_priority"))) Hi_ISR(void)
+[v _Hi_ISR `(v ~T41 @X0 1 ef ]
+"63
+[; ;main.c: 63: {
 {
 [e :U _Hi_ISR ]
 [f ]
-"63
-[; ;main.c: 63:     if(PIR1bits.CCP1IF == 1) {
+"64
+[; ;main.c: 64:     if(PIR1bits.CCP1IF == 1) {
 [e $ ! == -> . . _PIR1bits 0 2 `i -> 1 `i 302  ]
 {
-"64
-[; ;main.c: 64:         RC2 ^= 1;
-[e =^ _RC2 -> -> -> 1 `i `b `Vb ]
 "65
-[; ;main.c: 65:         PIR1bits.CCP1IF = 0;
-[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 65:         RC2 ^= 1;
+[e =^ _RC2 -> -> -> 1 `i `b `Vb ]
 "66
-[; ;main.c: 66:         TMR3 = 0;
-[e = _TMR3 -> -> 0 `i `us ]
+[; ;main.c: 66:         PIR1bits.CCP1IF = 0;
+[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
 "67
-[; ;main.c: 67:     }
+[; ;main.c: 67:         TMR3 = 0;
+[e = _TMR3 -> -> 0 `i `us ]
+"68
+[; ;main.c: 68:     }
 }
 [e :U 302 ]
-"68
-[; ;main.c: 68:     return ;
-[e $UE 301  ]
 "69
-[; ;main.c: 69: }
+[; ;main.c: 69:     return ;
+[e $UE 301  ]
+"70
+[; ;main.c: 70: }
 [e :UE 301 ]
 }
 [p f _sprintf 8396800 ]
